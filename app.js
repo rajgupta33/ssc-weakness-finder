@@ -3,6 +3,7 @@ import express from "express";
 import { app, prepare } from "./server/app.js";
 
 const handler = express();
+handler.get("/", (req, res) => res.redirect(302, "/index.html"));
 let ready;
 handler.use(async (req, res, next) => {
   try {
