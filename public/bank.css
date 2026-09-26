@@ -1,0 +1,31 @@
+.bank-question {
+  border-bottom: 1px solid #e4e9f2;
+  padding: 16px 0;
+}
+.bank-question summary {
+  cursor: pointer;
+  line-height: 1.8;
+}
+.bank-question h3 {
+  font-size: 17px;
+  line-height: 1.5;
+}
+.publish-form {
+  border-top: 2px solid #dce6f4;
+  margin-top: 25px;
+  padding-top: 20px;
+  max-width: 620px;
+}
+.approval-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 18px 0;
+  line-height: 1.6;
+}
+.approval-check input {
+  margin-top: 6px;
+  flex: none;
+  width: 18px;
+  height: 18px;
+}

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Teacher · SSC Weakness Finder</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/bank.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="shell topbar-inner">
+        <a class="brand" href="/"><span>✓</span>SSC Weakness Finder</a>
+        <nav class="topnav">
+          <a href="/">Student site</a
+          ><a class="active" href="/admin.html">Teacher</a>
+        </nav>
+      </div>
+    </header>
+    <main class="shell">
+      <div class="page-head">
+        <div>
+          <div class="eyebrow">Teacher workspace</div>
+          <h1>Diagnostic overview</h1>
+          <p>Question integrity and class performance in one place.</p>
+        </div>
+        <button class="btn ghost hidden" id="logout">Sign out</button>
+      </div>
+      <div id="admin-root"></div>
+    </main>
+    <script type="module" src="/admin.js"></script>
+  </body>
+</html>

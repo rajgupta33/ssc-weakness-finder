@@ -1,0 +1,11 @@
+import { $, escapeHtml, pct, attemptApi, message } from "./common.js";
+const id = new URLSearchParams(location.search).get("id");
+$("#review-link").href = `/review.html?id=${encodeURIComponent(id)}`;
+try {
+  const r = await attemptApi(id, "/result");
+  $("#name").textContent = `Student: ${r.student_name}`;
+  $("#result").innerHTML =
+    `<div class="card result-hero"><div><div class="eyebrow" style="color:#a9c8fc">YOUR SCORECARD</div><h1>Diagnostic complete</h1><p>Use the module breakdown to decide what to revise next.</p></div><div class="score-big">${r.score} <small>/ ${r.max_score}</small></div></div><div class="stat-grid"><div class="card stat"><strong>${pct(r.accuracy)}</strong><span>Accuracy on answered questions</span></div><div class="card stat"><strong>${r.correct}</strong><span>Correct</span></div><div class="card stat"><strong>${r.incorrect}</strong><span>Incorrect</span></div><div class="card stat"><strong>${r.unattempted}</strong><span>Unattempted</span></div></div><div class="grid-two"><div class="card panel"><h2>Module performance</h2><div class="table-wrap"><table><thead><tr><th>Module</th><th>Correct</th><th>Accuracy</th><th>Status</th></tr></thead><tbody>${r.modules.map((m) => `<tr><td>${escapeHtml(m.name)}</td><td>${m.correct} / ${m.total}</td><td>${pct(m.accuracy)}</td><td><span class="badge ${m.status.replace(" ", "-")}">${m.status}</span></td></tr>`).join("")}</tbody></table></div></div><div class="card panel"><h2>Top weak areas</h2>${r.weakAreas.length ? r.weakAreas.map((m) => `<div class="priority"><strong>${escapeHtml(m.name)} · ${m.correct}/${m.total}</strong><p>${m.detail ? escapeHtml(m.detail) : m.patterns.length ? m.patterns.map((p) => `${p.count} mistake${p.count === 1 ? "" : "s"} in ${escapeHtml(p.sub_module.replaceAll("_", " "))}. Revise: ${escapeHtml(p.rule_summary)}. Evidence: Q${p.questions.map((n) => String(n).padStart(2, "0")).join(", Q")}.`).join(" ") : `Revise: ${escapeHtml(m.revision_text)}.`}</p><a href="/review.html?id=${encodeURIComponent(id)}#${m.code}">Review mistakes →</a></div>`).join("") : '<p class="muted">No major weak module detected in this diagnostic.</p>'}</div></div>`;
+} catch (error) {
+  $("#result").innerHTML = message(error.message, "error");
+}

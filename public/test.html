@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Test · SSC Weakness Finder</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body class="test-page">
+    <header class="topbar">
+      <div class="shell topbar-inner">
+        <a class="brand" href="/"><span>✓</span>SSC Weakness Finder</a>
+        <nav class="topnav"><span>English · Active & Passive Voice</span></nav>
+      </div>
+    </header>
+    <main class="shell">
+      <div class="page-head">
+        <div>
+          <div class="eyebrow">Your diagnostic</div>
+          <h1>Active & Passive Voice</h1>
+          <p id="student-label">Loading attempt…</p>
+        </div>
+        <button id="submit-top" class="btn" disabled>Final Submit</button>
+      </div>
+      <div id="alert"></div>
+      <div class="test-layout">
+        <section class="card question-card" id="question"></section>
+        <aside class="card side-card">
+          <div class="progress-track"><div id="progress-bar"></div></div>
+          <div class="muted" id="progress-label">Answered 0 of 20</div>
+          <details id="palette-drawer" open>
+            <summary>Question palette</summary>
+            <div class="palette" id="palette"></div>
+            <div class="legend">
+              <span><i></i>Not visited</span
+              ><span><i class="visited"></i>Unanswered</span
+              ><span><i class="green"></i>Answered</span
+              ><span><i class="amber"></i>Review</span>
+            </div>
+          </details>
+        </aside>
+      </div>
+    </main>
+    <div id="modal-root"></div>
+    <script type="module" src="/test.js"></script>
+  </body>
+</html>

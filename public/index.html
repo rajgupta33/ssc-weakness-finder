@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>SSC Weakness Finder</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="shell topbar-inner">
+        <a class="brand" href="/"><span>✓</span>SSC Weakness Finder</a>
+        <nav class="topnav">
+          <a class="active" href="/">Home</a
+          ><a href="/admin.html">Teacher access</a>
+        </nav>
+      </div>
+    </header>
+    <main class="shell">
+      <section class="hero">
+        <div>
+          <div class="eyebrow">SSC English diagnostic</div>
+          <h1>Know exactly where you <em>need to improve.</em></h1>
+          <p class="lead">
+            A focused Active & Passive Voice test that turns your answers into a
+            clear revision plan, module by module.
+          </p>
+          <div class="hero-points">
+            <span>20 verified PYQs</span><span>Instant scorecard</span
+            ><span>Focused revision</span>
+          </div>
+        </div>
+        <div class="card start-card">
+          <h2 class="card-heading">Start your diagnostic</h2>
+          <p class="muted">No account needed. Just enter your name.</p>
+          <form id="start-form">
+            <label class="label" for="student-name">Student name</label
+            ><input
+              class="input"
+              id="student-name"
+              name="student_name"
+              maxlength="60"
+              placeholder="Enter your full name"
+              required
+            />
+            <div class="diagnostic">
+              <small>YOUR TEST</small
+              ><strong>English · Active & Passive Voice</strong
+              ><small
+                >20 Questions &nbsp;·&nbsp; 20 Marks &nbsp;·&nbsp; No negative
+                marking</small
+              >
+            </div>
+            <div id="status"></div>
+            <button class="btn wide" id="start-btn" type="submit" disabled>
+              Start Test →
+            </button>
+          </form>
+          <p class="fine">
+            Answers appear only after final submission. Your name and test
+            performance are stored for teacher analysis.
+          </p>
+        </div>
+      </section>
+      <section class="how">
+        <h2 class="section-title">How it works</h2>
+        <div class="steps">
+          <div class="card step">
+            <b>1</b><strong>Attempt the questions</strong>
+            <p>
+              Answer 20 questions from the Active & Passive Voice chapter at
+              your own pace.
+            </p>
+          </div>
+          <div class="card step">
+            <b>2</b><strong>Get your breakdown</strong>
+            <p>See your score and performance across eight grammar modules.</p>
+          </div>
+          <div class="card step">
+            <b>3</b><strong>Revise with clarity</strong>
+            <p>Review mistakes and the exact rules tied to each weak area.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="shell">SSC Weakness Finder · Chapter level diagnostics</div>
+    </footer>
+    <script type="module" src="/landing.js"></script>
+  </body>
+</html>

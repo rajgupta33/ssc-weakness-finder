@@ -1,0 +1,31 @@
+{
+  "name": "ssc-weakness-finder",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": "22.x"
+  },
+  "scripts": {
+    "dev": "node --watch server/index.js",
+    "setup": "node scripts/setup.js",
+    "start": "node server/index.js",
+    "test": "vitest run",
+    "seed": "node scripts/seed.js",
+    "test:e2e": "playwright test",
+    "check": "npm test && npm run test:e2e",
+    "import": "node server/import.js"
+  },
+  "dependencies": {
+    "@electric-sql/pglite": "^0.3.15",
+    "dotenv": "^16.6.1",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.7.0",
+    "pg": "^8.16.3"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "supertest": "^7.1.4",
+    "vitest": "^5.0.2"
+  }
+}
